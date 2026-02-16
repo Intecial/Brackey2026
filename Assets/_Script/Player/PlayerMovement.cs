@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void CheckGround(){
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f, groundLayer);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight, groundLayer);
     }
 
     private void SpeedControl(){
@@ -92,25 +92,10 @@ public class PlayerMovement : MonoBehaviour
         isReadyToJump = true;
     }
 
-void OnDrawGizmos()
-{
-    Gizmos.color = Color.red;
-
-    float radius = 0.3f;
-    float distance = playerHeight * 0.5f + 0.2f;
-
-    Vector3 origin = transform.position;
-    Vector3 endPoint = origin + Vector3.down * distance;
-
-    // Draw line
-    Gizmos.DrawLine(origin, endPoint);
-
-    // Draw starting sphere
-    Gizmos.DrawWireSphere(origin, radius);
-
-    // Draw ending sphere
-    Gizmos.DrawWireSphere(endPoint, radius);
-}
+    void OnDrawGizmos(){ 
+        Gizmos.color = Color.red; 
+        Gizmos.DrawRay(transform.position, Vector3.down * playerHeight); 
+    }
 
 }
 

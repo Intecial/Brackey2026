@@ -1,7 +1,12 @@
 using UnityEngine;
 
-public class QuakeMovement : MonoBehaviour
+public class ExmapleInteract : MonoBehaviour, IInteractable
 {
+    public void Interact()
+    {
+        Debug.Log("Hello World!");
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
