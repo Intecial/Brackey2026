@@ -9,8 +9,13 @@ public class RaycastHandler : MonoBehaviour
 
     [Header("Keybind")]
     [SerializeField] private KeyCode interactKey = KeyCode.E;
+    [SerializeField] private KeyCode pickUpKey = KeyCode.F;
+    [SerializeField] private KeyCode dropKey = KeyCode.G;
 
     private GameObject interactedObject;
+    private GameObject hoveredPickUp;
+
+    [SerializeField] private PickUpLogic pickUpLogic;
 
     void Start()
     {
@@ -30,6 +35,14 @@ public class RaycastHandler : MonoBehaviour
         {
            interactedObject?.GetComponent<IInteractable>()?.Interact();
         }
+        if (Input.GetKeyDown(pickUpKey))
+        {
+            hoveredPickUp?.GetComponent<IPickUp>()?.PickUp(pickUpLogic);
+        }
+        if (Input.GetKeyDown(dropKey))
+        {
+            hoveredPickUp?.GetComponent<IPickUp>()?.Drop(pickUpLogic);
+        }
     }
 
     private void CheckInteractable()
@@ -41,7 +54,11 @@ public class RaycastHandler : MonoBehaviour
             {
                 interactedObject = hit.collider.gameObject;
                 onInteract?.Invoke(true);
-            } 
+            } else if (hit.collider.gameObject.TryGetComponent(out IPickUp pickUp))
+            {
+                hoveredPickUp = hit.collider.gameObject;
+                onInteract?.Invoke(true);
+            }
         }else
             {
                 interactedObject = null;
