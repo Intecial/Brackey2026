@@ -21,8 +21,34 @@ public class PickUpLogic : MonoBehaviour
     {
         if(equippedObject != null)
         {
+            if(equippedObject.TryGetComponent(out IPickUp pickUp))
+            {
+                pickUp.Drop();
+            }
             equippedObject.transform.parent = null;
             equippedObject = null;
+        }
+    }
+
+    public void UsePickUp(Transform facingTransform)
+    {
+        if(equippedObject != null)
+        {
+            if(equippedObject.TryGetComponent(out IPickUp pickUp))
+            {
+                pickUp.Use(facingTransform);
+            }
+        }
+    }
+
+    public void AlternateUsePickUp(Transform facingTransform)
+    {
+        if(equippedObject != null)
+        {
+            if(equippedObject.TryGetComponent(out IPickUp pickUp))
+            {
+                pickUp.AlternateUse(facingTransform);
+            }
         }
     }
 }

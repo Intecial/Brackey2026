@@ -11,6 +11,8 @@ public class RaycastHandler : MonoBehaviour
     [SerializeField] private KeyCode interactKey = KeyCode.E;
     [SerializeField] private KeyCode pickUpKey = KeyCode.F;
     [SerializeField] private KeyCode dropKey = KeyCode.G;
+    [SerializeField] private KeyCode useKey = KeyCode.Mouse0;
+    [SerializeField] private KeyCode alternateUseKey = KeyCode.Mouse1;
 
     private GameObject interactedObject;
     private GameObject hoveredPickUp;
@@ -41,7 +43,16 @@ public class RaycastHandler : MonoBehaviour
         }
         if (Input.GetKeyDown(dropKey))
         {
-            hoveredPickUp?.GetComponent<IPickUp>()?.Drop(pickUpLogic);
+            pickUpLogic.DropFlow();
+            // hoveredPickUp?.GetComponent<IPickUp>()?.Drop(pickUpLogic);
+        }
+        if (Input.GetKeyDown(useKey))
+        {
+            pickUpLogic.UsePickUp(this.transform);   
+        }
+        if (Input.GetKeyDown(alternateUseKey))
+        {
+            pickUpLogic.AlternateUsePickUp(this.transform);
         }
     }
 
