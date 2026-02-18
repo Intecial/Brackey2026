@@ -1,16 +1,16 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PortalGun : MonoBehaviour, IPickUp
 {
 
+    public static event Action<string> OnAlternateClick;
     public List<string> portalGunSelections;
     private int selectedIndex = 0;
     [SerializeField]
     private GameObject portal;
 
-    [SerializeField]
-    private Transform spawnLocation;
 
     private GameObject spawnedPortal;
     
@@ -54,6 +54,7 @@ public class PortalGun : MonoBehaviour, IPickUp
     public void AlternateUse(Transform facingTransform)
     {
         selectedIndex = (selectedIndex + 1) % portalGunSelections.Count;
+        OnAlternateClick?.Invoke(portalGunSelections[selectedIndex]);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

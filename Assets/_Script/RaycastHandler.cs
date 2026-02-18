@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RaycastHandler : MonoBehaviour
 {
-    public static event Action<bool> onInteract;
+    public static event Action<string> onInteract;
     [SerializeField] private float interactRange;
     [SerializeField] private LayerMask interactLayer;
 
@@ -64,16 +64,16 @@ public class RaycastHandler : MonoBehaviour
             if(hit.collider.gameObject.TryGetComponent(out IInteractable interactable))
             {
                 interactedObject = hit.collider.gameObject;
-                onInteract?.Invoke(true);
+                onInteract?.Invoke("E");
             } else if (hit.collider.gameObject.TryGetComponent(out IPickUp pickUp))
             {
                 hoveredPickUp = hit.collider.gameObject;
-                onInteract?.Invoke(true);
+                onInteract?.Invoke("F");
             }
         }else
             {
                 interactedObject = null;
-                onInteract?.Invoke(false);
+                onInteract?.Invoke("");
             }
     }
 

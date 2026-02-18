@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 0; align-self: center; bottom: 0; position: absolute; font-size: 38px;">
+        <ui:Label text="PortalLevelName" name="PortalLevelName" style="font-size: 68px; padding-bottom: 100px;"/>
+    </ui:VisualElement>
+</ui:UXML>
