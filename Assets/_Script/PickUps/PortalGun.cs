@@ -41,12 +41,9 @@ public class PortalGun : MonoBehaviour, IPickUp
 
         Quaternion lookRotation = Quaternion.LookRotation(flatForward);
 
-        // Combine with prefab’s baked rotation
-// Add your 90° Y offset
-Quaternion yOffset = Quaternion.Euler(0f, 90f, 0f);
+        Quaternion yOffset = Quaternion.Euler(0f, 90f, 0f);
 
-// Combine everything
-Quaternion finalRotation = lookRotation * yOffset * portal.transform.rotation;
+        Quaternion finalRotation = lookRotation * yOffset * portal.transform.rotation;
 
         GameObject portalClone = Instantiate(portal, calculatedSpawn, finalRotation);
         spawnedPortal = portalClone;
