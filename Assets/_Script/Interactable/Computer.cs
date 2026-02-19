@@ -1,21 +1,14 @@
+using System;
 using UnityEngine;
 
 public class Computer : MonoBehaviour, IInteractable
 {
+    public static event Action onComputerOpen;
     public void Interact()
     {
-        Debug.Log("Hello World!");
-    }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        onComputerOpen?.Invoke();
     }
 }

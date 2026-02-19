@@ -1,0 +1,15 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="InventoryRow" src="project://database/Assets/UI%20Toolkit/InventoryRow.uxml?fileID=9197481963319205126&amp;guid=5bab34578f1f24222a9987221cf30d5a&amp;type=3#InventoryRow"/>
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: center; justify-content: center; margin-top: 10%; margin-right: 10%; margin-bottom: 10%; margin-left: 10%; background-color: rgb(98, 155, 159);">
+        <ui:VisualElement style="flex-grow: 0; align-items: center; align-content: auto; flex-direction: row; width: 100%; align-self: flex-end; justify-content: space-between; display: flex;">
+            <ui:Label text="Inventory View" style="flex-grow: 1; font-size: 32px;"/>
+            <ui:Button text="Close" name="CloseButton" style="font-size: 32px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="InventoryContainer" style="flex-grow: 1; width: 100%; justify-content: center; align-items: center; display: flex;">
+            <ui:Instance template="InventoryRow" name="InventoryRow"/>
+            <ui:Instance template="InventoryRow" name="InventoryRow"/>
+            <ui:Instance template="InventoryRow" name="InventoryRow"/>
+            <ui:Instance template="InventoryRow" name="InventoryRow"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
