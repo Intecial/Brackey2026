@@ -10,4 +10,5 @@ public interface IPickUp
     void Use(Transform facingTransform);
 
     void AlternateUse(Transform facingTransform);
+
 }

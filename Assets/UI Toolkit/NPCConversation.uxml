@@ -1,0 +1,16 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/GameUSS.uss?fileID=7433441132597879392&amp;guid=5a3e280297ed1491ba56702fe86a6fd3&amp;type=3#GameUSS"/>
+    <ui:VisualElement class="panel" style="flex-grow: 1; margin-top: 10%; margin-right: 15%; margin-bottom: 10%; margin-left: 15%;">
+        <ui:VisualElement class="panel-header">
+            <ui:Label text="NPC Name" name="NPCName" class="panel-title"/>
+            <ui:Button text="X" name="CloseButton" class="panel-hide-bubtton"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="VisualElement" class="panel-content" style="flex-grow: 1; align-self: center; justify-content: center; width: 100%; padding-top: 8%; padding-right: 8%; padding-bottom: 8%; padding-left: 8%; background-color: rgba(72, 72, 72, 0.78); border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; flex-direction: column; align-items: center;">
+            <ui:Label text="Label" name="DialogueText" style="font-size: 42px; -unity-text-align: middle-center; color: rgb(255, 255, 255);"/>
+            <ui:VisualElement name="ChoiceContainer" style="flex-grow: 0;">
+                <ui:Button text="Button"/>
+                <ui:Button text="Button"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

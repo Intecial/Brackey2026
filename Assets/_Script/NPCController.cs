@@ -1,46 +1,50 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPCController : MonoBehaviour, IInteractable
 {
+    public event Action OnCompleteRequest;
+
+    public event Action<NPCDialogues> OnDialogueOpen;
     [SerializeField]
-    private TextMeshPro dialogText;
-    public float dialogueSpeed;
+    private NPCDialogueView _dialogueView;
 
     [SerializeField]
     private NPCDialogues dialogues;
 
     private bool isTalking = false;
-
-    public void Interact()
+    private PickUpLogic storedPickUp;
+    
+    public void Interact(PickUpLogic pickUpLogic)
     {
         if(isTalking) return;
-        StartCoroutine(ExecuteDialogue());
+        storedPickUp = pickUpLogic;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        OnDialogueOpen?.Invoke(dialogues);
     }
 
-    private IEnumerator ExecuteDialogue()
-    {
-        isTalking = true;
-        foreach (var dialogue in dialogues.dialogues)
-        {
-            dialogText.text = dialogue;
-            yield return new WaitForSeconds(dialogueSpeed);
-        }
-        yield return new WaitForSeconds(dialogueSpeed);
-        isTalking = false;
-        dialogText.text = "";
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        dialogText.text = "";
-    }
-
-    // Update is called once per frame
-    void Update()
+    private IEnumerator DespawnNpc()
     {
         
+        yield return new WaitForSeconds(3f);
+        OnCompleteRequest?.Invoke();
+        Destroy(this.gameObject);
     }
+
+    public void SubmitButtonClicked()
+    {
+        if (storedPickUp.CompareRequirement(dialogues.requirement))
+        {   
+            
+            storedPickUp.DestroyPickedUp();
+            StartCoroutine(DespawnNpc());
+        }
+        
+    }
+    
 }

@@ -24,7 +24,7 @@ public class CraftingTerminal : MonoBehaviour, IInteractable
 
     }
 
-    public void Interact()
+    public void Interact(PickUpLogic pickUpLogic)
     {
         currentIndex = 0;
         Recipe recipe = recipes[currentIndex % recipes.Count];
@@ -36,11 +36,23 @@ public class CraftingTerminal : MonoBehaviour, IInteractable
     private void onPrevious()
     {
         currentIndex--;
+        if (currentIndex < 0)
+        {
+            currentIndex = 0;
+        }
+        Recipe recipe = recipes[currentIndex % recipes.Count];
+        onCraftingTerminalOpen?.Invoke(recipe);
     }
 
     private void onNext()
     {
         currentIndex++;
+        if (currentIndex >= recipes.Count)
+        {
+            currentIndex = recipes.Count - 1;
+        }
+        Recipe recipe = recipes[currentIndex % recipes.Count];
+        onCraftingTerminalOpen?.Invoke(recipe);
     }
 
     private void CraftRecipe()

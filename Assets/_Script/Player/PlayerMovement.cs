@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     public bool isGrounded;
 
-
+    public bool isInputDisabled = false;
     private Rigidbody rb;
     float horizontalInput;
     float verticalInput;
@@ -33,7 +34,15 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    private void InputHandler(){
+    private void OnEnable()
+    {
+        View.OnDisableMovement += DisableInput;
+        View.OnEnableMovement += EnableInput;
+    }
+
+    private void InputHandler()
+    {
+        if (isInputDisabled) return;
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");   
         if(Input.GetKeyDown(jumpKey) && isReadyToJump && isGrounded){
@@ -97,5 +106,14 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawRay(transform.position, Vector3.down * playerHeight); 
     }
 
+    private void DisableInput()
+    {
+        isInputDisabled = true;
+    }
+    
+    private void EnableInput()
+    {
+        isInputDisabled = false;
+    }
 }
 

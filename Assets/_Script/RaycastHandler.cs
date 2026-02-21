@@ -13,12 +13,13 @@ public class RaycastHandler : MonoBehaviour
     [SerializeField] private KeyCode dropKey = KeyCode.G;
     [SerializeField] private KeyCode useKey = KeyCode.Mouse0;
     [SerializeField] private KeyCode alternateUseKey = KeyCode.Mouse1;
+    [SerializeField] private KeyCode portalGunKey = KeyCode.Z;
 
     private GameObject interactedObject;
     private GameObject hoveredPickUp;
 
     [SerializeField] private PickUpLogic pickUpLogic;
-
+    // [SerializeField] private 
     void Start()
     {
         
@@ -35,7 +36,7 @@ public class RaycastHandler : MonoBehaviour
         CheckInteractable();
         if(Input.GetKeyDown(interactKey))
         {
-           interactedObject?.GetComponent<IInteractable>()?.Interact();
+           interactedObject?.GetComponent<IInteractable>()?.Interact(pickUpLogic);
         }
         if (Input.GetKeyDown(pickUpKey))
         {
@@ -54,6 +55,7 @@ public class RaycastHandler : MonoBehaviour
         {
             pickUpLogic.AlternateUsePickUp(this.transform);
         }
+
     }
 
     private void CheckInteractable()
@@ -70,11 +72,12 @@ public class RaycastHandler : MonoBehaviour
                 hoveredPickUp = hit.collider.gameObject;
                 onInteract?.Invoke("F");
             }
-        }else
-            {
-                interactedObject = null;
-                onInteract?.Invoke("");
-            }
+        }
+        else
+        {
+            interactedObject = null; 
+            onInteract?.Invoke("");
+        }
     }
 
     void OnDrawGizmos(){ 
