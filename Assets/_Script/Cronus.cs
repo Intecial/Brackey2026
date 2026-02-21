@@ -1,7 +1,9 @@
+using _Script;
 using UnityEngine;
 
-public class Cronus : MonoBehaviour, IPickUp
+public class Cronus : MonoBehaviour, IPickUp, IObjective
 {
+    public CraftMaterial craftMaterial;
     public void Drop()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -25,5 +27,10 @@ public class Cronus : MonoBehaviour, IPickUp
     public void AlternateUse(Transform facingTransform)
     {
         // throw new System.NotImplementedException();
+    }
+
+    public string GetName()
+    {
+        return "Cronus";
     }
 }

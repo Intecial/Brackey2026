@@ -5,6 +5,7 @@ public class InventoryView : View
 {
     private Button _closeButton;
     private VisualElement _inventoryContainer;
+    [SerializeField] private VisualTreeAsset _inventoryRow;
     void OnEnable()
     {
         PlayerInventoryManager.onInventoryOpen += Render;
@@ -18,10 +19,14 @@ public class InventoryView : View
         _inventoryContainer.Clear();
         foreach (InventoryEntry entry in inventory.materials)
         {
-            Label label = new Label();
-            label.text = entry.material.name + ": " + entry.amount;
-            _inventoryContainer.Add(label);
+            VisualElement clonedRow = _inventoryRow.CloneTree();
+            Label label = clonedRow.Q<Label>("InventoryLabel");
+            Label amountLabel = clonedRow.Q<Label>("InventoryAmount");
+            amountLabel.text = entry.amount.ToString();
+            label.text = entry.material.name;
+            _inventoryContainer.Add(clonedRow);
         }
+        DisableMovement();
         Show();
     }
 
@@ -29,6 +34,7 @@ public class InventoryView : View
     {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked; 
         UnityEngine.Cursor.visible = false;
+        EnableMovement();
         Hide();
     }
     void Start()

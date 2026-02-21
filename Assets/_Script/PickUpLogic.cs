@@ -1,4 +1,5 @@
 
+using _Script;
 using UnityEngine;
 
 public class PickUpLogic : MonoBehaviour
@@ -50,5 +51,23 @@ public class PickUpLogic : MonoBehaviour
                 pickUp.AlternateUse(facingTransform);
             }
         }
+    }
+
+    public bool CompareRequirement(string requirement)
+    {
+        if (equippedObject != null)
+        {
+            if (equippedObject.TryGetComponent(out IObjective objective))
+            {
+                return objective.GetName() == requirement;
+            }
+        }
+
+        return false;
+    }
+
+    public void DestroyPickedUp()
+    {
+        Destroy(equippedObject);
     }
 }

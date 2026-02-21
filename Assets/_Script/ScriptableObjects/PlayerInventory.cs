@@ -50,6 +50,10 @@ public class PlayerInventory
             if (entry.material == material && entry.amount >= amount)
             {
                 entry.amount -= amount;
+                if (entry.amount <= 0)
+                {
+                    materials.Remove(entry);
+                }
                 return true;
             }
         }

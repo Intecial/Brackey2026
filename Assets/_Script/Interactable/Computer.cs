@@ -4,7 +4,7 @@ using UnityEngine;
 public class Computer : MonoBehaviour, IInteractable
 {
     public static event Action onComputerOpen;
-    public void Interact()
+    public void Interact(PickUpLogic pickUpLogic)
     {
 
         Cursor.lockState = CursorLockMode.None;

@@ -6,5 +6,8 @@ public class NPCDialogues : ScriptableObject
 {
     public List<string> dialogues;
 
-    
+    public string requirement;
+
+    public List<string> completionDialogues;
+
 }

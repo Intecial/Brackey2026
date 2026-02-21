@@ -18,6 +18,7 @@ namespace _Script
         private Label _recipeName;
     
         private VisualElement _recipeContainer;
+        [SerializeField] private VisualTreeAsset _inventoryRow;
 
         private void OnEnable()
         {
@@ -53,11 +54,14 @@ namespace _Script
             _recipeName.text = recipe.name;
             foreach (var entry in recipe.recipeEntries)
             {
-                Label label = new Label();
-                label.text = entry.material + ": " + entry.amount;
-                _recipeContainer.Add(label);
+                VisualElement inventoryRow = _inventoryRow.CloneTree();
+                Label ingredientNameLabel = inventoryRow.Q<Label>("InventoryLabel");
+                Label ingredientAmountLabel = inventoryRow.Q<Label>("InventoryAmount");
+                ingredientAmountLabel.text = entry.amount.ToString();
+                ingredientNameLabel.text = entry.material.materialName;
+                _recipeContainer.Add(inventoryRow);
             }
-
+            DisableMovement();
             Show();
         }
 
@@ -65,6 +69,7 @@ namespace _Script
         {
             UnityEngine.Cursor.lockState = CursorLockMode.Locked; 
             UnityEngine.Cursor.visible = false;
+            EnableMovement();
             Hide();
         }
         private void OnCraftButtonClick()

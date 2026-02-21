@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f1a490b5b7e4de08fde6697479d929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cronus
+  craftMaterial: {fileID: 11400000, guid: 85b7019486f7e4810bd50cd71f9bf2c1, type: 2}
 --- !u!54 &8559303521189077684
 Rigidbody:
   m_ObjectHideFlags: 0
