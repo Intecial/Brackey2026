@@ -8,15 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EarthPrime.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/Level1.unity
-    guid: 33a63308a106140da9cdc92067eba72d
   - enabled: 1
     path: Assets/Scenes/TestWorld.unity
     guid: dbf15cd434c9b4d33b8478cef1e17302
   - enabled: 1
     path: Assets/Scenes/ButtWorld.unity
-    guid: 3573a659dced3a74a9572a07b8515583
+    guid: 6c67d7ca1c14041fca41a922dbed2e59
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
