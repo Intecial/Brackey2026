@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: 241d13
+    second: {fileID: 2100000, guid: 5483c973e1117704281357b6e3903ed9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: 2a2720
     second: {fileID: 2100000, guid: ba133ea26fdd63a4c8f707549605c87b, type: 2}
   - first:
@@ -42,8 +47,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: 3a4032
+    second: {fileID: 2100000, guid: a3ef812b01141ee469aa28dbf20468fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 48402d
+    second: {fileID: 2100000, guid: 9468ccc60e1b6b143b5b9bfb1fff90f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: 484846
     second: {fileID: 2100000, guid: d4843501d03d8e74f984ff995bf80a6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 4b483f
+    second: {fileID: 2100000, guid: 67322b20effbd1c40935891ed2423694, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -54,6 +74,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: 51423d
     second: {fileID: 2100000, guid: d6ce9b0d8a21ba84f9afd60e7f1cf158, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 586867
+    second: {fileID: 2100000, guid: 3023e464a766e8542ae5d812b52328c8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -69,6 +94,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: 919e8d
     second: {fileID: 2100000, guid: 1ee89ccefc016e9489f3968ae5deeca3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 357962d85bdef6d44b020fc46de8d91f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -134,6 +164,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: WoodPlywood
     second: {fileID: 2100000, guid: e3a3cc78c35495f478ecfd99df6c9810, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bf7600
+    second: {fileID: 2100000, guid: e81250a4415482b4786fa9ff5c60e3be, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
