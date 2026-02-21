@@ -11,12 +11,14 @@ public class NPCDialogueView : View
     private Label _dialogueText;
 
     private VisualElement _buttonContainer;
+    private Label _npcName;
     
     private void OnEnable()
     {
         _npcController.OnDialogueOpen += Render;
         _dialogueText = ui.Q<Label>("DialogueText");
         _buttonContainer = ui.Q<VisualElement>("ChoiceContainer");
+        _npcName = ui.Q<Label>("NPCName");
     }
 
     private void OnDisable()
@@ -25,6 +27,7 @@ public class NPCDialogueView : View
     }
     private void Render(NPCDialogues dialogues)
     {
+        _npcName.text = dialogues.npcName;
         StartCoroutine(ExecuteDialogue(dialogues.dialogues));
 
         Button waitButton = new Button();
