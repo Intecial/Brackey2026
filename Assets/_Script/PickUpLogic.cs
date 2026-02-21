@@ -70,4 +70,14 @@ public class PickUpLogic : MonoBehaviour
     {
         Destroy(equippedObject);
     }
+
+    public bool isPortalGun()
+    {
+        if (equippedObject != null)
+        {
+            return equippedObject.TryGetComponent(out PortalGun result);
+        }
+
+        return false;
+    }
 }

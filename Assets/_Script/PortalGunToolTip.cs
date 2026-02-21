@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -15,7 +16,12 @@ public class PortalGunToolTip : View
     {
         RaycastHandler.onInteract -= ChangeDimension;
     }
-    
+
+    private void OnDestroy()
+    {
+        
+        RaycastHandler.onInteract -= ChangeDimension;
+    }
 
     private void ChangeDimension(string dimension)
     {

@@ -14,6 +14,7 @@ public class PortalGun : MonoBehaviour, IPickUp
 
     private GameObject spawnedPortal;
     
+    
     public void Drop()
     {
        Rigidbody rb = GetComponent<Rigidbody>();
@@ -59,7 +60,11 @@ public class PortalGun : MonoBehaviour, IPickUp
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        PickUpLogic pickUpLogic = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PickUpLogic>();
+        if (pickUpLogic != null && pickUpLogic.isPortalGun())
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // Update is called once per frame
