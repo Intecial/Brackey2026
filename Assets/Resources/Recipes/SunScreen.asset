@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74d386ea72abb42cda93df2b0a53a0a3, type: 3}
-  m_Name: Cronus
+  m_Name: SunScreen
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
-  recipeName: 
+  recipeName: Sunscreen
   recipeEntries:
-  - material: {fileID: 11400000, guid: 3c680aad146ca4ca4a5753eb723bc3fc, type: 2}
+  - material: {fileID: 11400000, guid: c87e843c1c25743009704a68d934c760, type: 2}
     amount: 2
-  - material: {fileID: 11400000, guid: 941e3182b939a44129f2944c0dca7481, type: 2}
+  - material: {fileID: 11400000, guid: 4a2de4d03f7c94c08910a1ed20852c30, type: 2}
     amount: 2
-  material: {fileID: 11400000, guid: 85b7019486f7e4810bd50cd71f9bf2c1, type: 2}
-  recipePrefab: {fileID: 7353807688894048938, guid: 4e668dd982f3b47b1bc459947e351e9f, type: 3}
+  material: {fileID: 0}
+  recipePrefab: {fileID: 3348227298650834799, guid: f1d1cd74c8ac04c27a9112908d54a2ce, type: 3}
