@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/EarthPrime.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/TestWorld.unity
-    guid: dbf15cd434c9b4d33b8478cef1e17302
-  - enabled: 1
     path: Assets/Scenes/ButtWorld.unity
     guid: 6c67d7ca1c14041fca41a922dbed2e59
+  - enabled: 1
+    path: Assets/Scenes/Gazorpazorp.unity
+    guid: 997bf698f56fa084d8ea837ea63adbe5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

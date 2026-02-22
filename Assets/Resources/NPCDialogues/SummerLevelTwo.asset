@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b04925d82bf447bba03a0b9bd1203a4, type: 3}
   m_Name: SummerLevelTwo
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogues
+  npcName: Summer
   dialogues:
   - Ayo
   - Can you gimme dat

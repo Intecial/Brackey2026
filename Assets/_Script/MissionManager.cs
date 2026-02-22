@@ -33,6 +33,11 @@ public class MissionManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         Mission currentActiveMission = missions[_missionNumber];
+        while (currentActiveMission.isCompleted)
+        {
+            _missionNumber++;
+            currentActiveMission = missions[_missionNumber];
+        }
         GameObject npcGameObject = Instantiate(currentActiveMission.npcPrefab, npcSpawnPoint);
         NPCController controller = npcGameObject.GetComponent<NPCController>();
         controller.OnCompleteRequest += CompleteMission;

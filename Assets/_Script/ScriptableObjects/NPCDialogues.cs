@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NPCDialogues", menuName = "Scriptable Objects/NPCDialogues")]
 public class NPCDialogues : ScriptableObject
 {
+    public string npcName;
     public List<string> dialogues;
 
     public string requirement;
