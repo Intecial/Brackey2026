@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogues
   npcName: Summer
   dialogues:
-  - Ayo
-  - Can you gimme dat
-  requirement: 
+  - Hey Uncle Rick
+  - I wanna look Cool and Hot
+  - Do you have anything that could make me instantly look Cool?
+  - You know, like a Lotion or Sunscreen that makes me look hot?
+  requirement: Sunscreen
   completionDialogues:
   - Great !
   - Amazing!

@@ -115,5 +115,23 @@ public class PlayerMovement : MonoBehaviour
     {
         isInputDisabled = false;
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+
+        if (other.gameObject.layer == groundLayer)
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+
+        if (other.gameObject.layer == groundLayer)
+        {
+            isGrounded = false;
+        }
+    }
 }
 

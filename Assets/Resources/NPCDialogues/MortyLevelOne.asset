@@ -15,9 +15,12 @@ MonoBehaviour:
   npcName: Morty
   dialogues:
   - Oh jeezz....
-  - Jessica....
-  - Ohhhh jeeeeezzz....
-  - Gimme some Cronus
+  - Rick, I've been sturggling
+  - In this video game I'm tryna beat... Oh jeez...
+  - Remember that device you told me about?
+  - A device that let's you cheat on all video games in the universe?
+  - I think it's called a Cronus.
+  - Could you get me that Rick?
   requirement: Cronus
   completionDialogues:
   - Ouhh yeahhh
